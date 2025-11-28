@@ -1,0 +1,577 @@
+/*
+    Learnify - Online Study Platform - style.css
+    Based on Capstone Project Requirements:
+    - Use only HTML5 & CSS3 (Flexbox/Grid mandatory)
+    - Apply responsive design using media queries (at least 2 breakpoints)
+    - Showcase custom styling, hover effects, and good use of fonts & colors.
+*/
+
+/* 1. CSS Variables and Global Reset */
+:root {
+    --color-primary: #1e88e5; /* Blue - Trust, Education */
+    --color-secondary: #ffb300; /* Amber - Highlight, Focus */
+    --color-dark: #263238;
+    --color-light: #f5f5f5;
+    --color-text: #455a64;
+    --color-white: #ffffff;
+
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    --max-width: 1200px;
+    --border-radius: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Base font size */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* Container for centering content */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+.section-tagline {
+    font-size: 1.1rem;
+    color: #78909c;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+/* Buttons */
+.cta-button, .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px; /* Pill shape for modern look */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.cta-button:hover {
+    background-color: #1565c0; /* Darker primary */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #ffc107; /* Lighter secondary */
+    transform: translateY(-2px);
+}
+
+/* 2. Header and Navigation (Flexbox) */
+header {
+    background-color: var(--color-white);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: var(--spacing-lg);
+}
+
+nav ul li a {
+    color: var(--color-text);
+    font-weight: 400;
+    padding: 0.5rem 0;
+    transition: color 0.25s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* 3. Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), #42a5f5);
+    color: var(--color-white);
+    padding: 8rem 0;
+    text-align: center;
+    /* Keyframe Animation */
+    animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--color-white);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 4. General Section Styling */
+section {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.courses, .pricing {
+    background-color: var(--color-light);
+}
+
+/* 5. Courses Section (CSS Grid) */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.course-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-card .card-content {
+    padding: var(--spacing-md);
+}
+
+.course-card h3 {
+    margin-top: 0;
+    color: var(--color-dark);
+}
+
+.course-card .instructor {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.course-card .details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    color: #78909c;
+}
+
+.course-card .card-link {
+    display: block;
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 50px;
+    color: var(--color-primary);
+    font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.course-card .card-link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* 6. Pricing Section (Flexbox) */
+.pricing-flex {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.plan-card.featured {
+    border: 3px solid var(--color-secondary);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+
+.plan-card h3 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.plan-card .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.plan-card .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.plan-card .description {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    min-height: 40px;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.plan-card ul li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dashed var(--color-light);
+}
+
+.plan-card .cta-button, .plan-card .btn-secondary {
+    width: 100%;
+    text-align: center;
+}
+
+/* 7. Testimonials Section */
+.testimonials {
+    background-color: var(--color-white);
+}
+
+.testimonial-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: var(--color-light);
+    padding: var(--spacing-lg);
+    border-left: 5px solid var(--color-secondary);
+    text-align: left;
+    font-style: italic;
+    border-radius: var(--border-radius);
+}
+
+.testimonial-card p {
+    margin-bottom: var(--spacing-md);
+}
+
+.testimonial-card footer {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: right;
+    display: block;
+}
+
+/* 8. Contact Form Section */
+.contact {
+    background-color: #e3f2fd; /* Light Blue Background */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact .cta-button {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* 9. Footer (Flexbox) */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+}
+
+.footer-info, .footer-links, .social-icons {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-info h3, .footer-links h3, .social-icons h3 {
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: var(--color-light);
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.footer-links ul li a:hover {
+    color: var(--color-secondary);
+}
+
+.social-icons .icons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.social-icons a {
+    color: var(--color-light);
+    font-size: 1.5rem;
+    border: 1px solid var(--color-light);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 10. Media Queries for Responsiveness */
+
+/* Tablet Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+    /* Header/Nav Stack */
+    header .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+
+    nav {
+        flex-basis: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 0 var(--spacing-sm);
+    }
+
+    .cta-button {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Grid Layouts (Single Column) */
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Pricing Flexbox */
+    .pricing-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        max-width: 100%;
+    }
+
+    .plan-card.featured {
+        transform: scale(1.02);
+    }
+
+    /* Testimonials */
+    .testimonial-list {
+        flex-direction: column;
+    }
+
+    /* Footer Stack */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-links, .social-icons {
+        min-width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .social-icons .icons {
+        justify-content: center;
+    }
+}
+
+/* Mobile Breakpoint (<= 480px) */
+@media (max-width: 480px) {
+    /* Typography Scaling */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+
+    /* Spacing */
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+}
