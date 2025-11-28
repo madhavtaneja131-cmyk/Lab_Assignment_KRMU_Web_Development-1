@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Hi, I am Madhav Taneja</h1>
+                <span class="highlight">Full Stack Developer</span>
+                <p>I am just learning how to build modern web application and solve real world problems.</p>
+            </div>
+            <div class="hero-image">
+                <img class="avatar-image" src="My_Image.jpg" alt="Avatar Image">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-text">
+                 Hello! I'm Madhav, a web/Full Stack developer with a passion for creating beautiful and functional websites.<br>
+               I am currently learning web development and working hard to enhance my skills.
+
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <span>Beginner</span>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS</h3>
+                    <span>Beginner</span>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <span>Learning</span>
+                </div>
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <span>Intermediate</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Project1Img1.png" class="image-1" alt="Project 1 view 1" >
+                        <img src="Project1Img2.png" class="image-2" alt="Project 1 view 2" >
+                    </div>
+                    <h3>Entab-D</h3>
+                    <p>A simple tab managing and tab grouping chrome extension made with collabration and adavnced javascirpt </p>
+                </div>
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="Project2Img1.png" class="image-1" alt="Project 2 view 1" >  
+                        <img src="Project2Img2.png" class="image-2" alt="Project 1 view 2" >                      
+                    </div>
+                    <h3>Calorie Tracker</h3>
+                    <p>An app to track your daily calorie intake and make healthier choices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title" style="text-align: center;">Contact Me</h2>
+            <div class="contact-form-container">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" placeholder="Write your message"></textarea>
+                    </div>
+                    <button type="button" class="send-btn">Send</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &COPY; 2025 Madhav Taneja. All rights reserved.
+    </footer>
+
+    <a href="#" class="back-to-top">↑ Back to Top</a>
+
+</body>
+</html>
